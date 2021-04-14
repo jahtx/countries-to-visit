@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App text-left">
       <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="/">Wander Too Far</Navbar.Brand>
+        <Navbar.Brand href="/">Oh The Places You'll Go!</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="#features">Features</Nav.Link>
