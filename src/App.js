@@ -3,13 +3,14 @@ import "./styles/main.scss";
 import globe from "./images/spinning-globe.gif";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import LinkList from "./components/LinkList/LinkList";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App text-left">
       <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="/">Travel Someplace</Navbar.Brand>
+        <Navbar.Brand href="/">Wander Too Far</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="#features">Features</Nav.Link>
@@ -17,8 +18,9 @@ function App() {
         </Nav>
       </Navbar>
       {/* <div className="container-sm mt-3">
-        <p>"Wherever you go becomes a part of you somehow." - Anita Desai</p>
+        "I'm going where the sun keeps shinin', Through the pouring rain"
       </div> */}
+
       <div className="container-sm mt-3">
         <img
           src={globe}
@@ -28,6 +30,9 @@ function App() {
       </div>
       <div className="container-sm">
         <h4>Places where the weather suits your clothes:</h4>
+      </div>
+      <div className="container-sm">
+        <LinkList />
       </div>
     </div>
   );
