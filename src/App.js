@@ -7,7 +7,7 @@ import LinkList from "./components/LinkList/LinkList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 const client = new ApolloClient({
-  uri: "https://graphql-weather-api.herokuapp.com/",
+  uri: "https://countries.trevorblades.com/",
   cache: new InMemoryCache(),
 });
 
@@ -32,7 +32,7 @@ function App() {
           />
         </div>
         <div className="container-sm">
-          <h4>Places where the weather suits your clothes:</h4>
+          <h4>Countries to Visit:</h4>
           <LinkList />
         </div>
       </div>
