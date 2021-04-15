@@ -18,7 +18,15 @@ const LinkList = () => {
   });
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error!</div>;
-  return <ApolloConsumer>{(client) => JSON.stringify(data)}</ApolloConsumer>;
+  return (
+    <ApolloConsumer>
+      {(client) =>
+        data.countries.map((country) => (
+          <Link key={country.id} country={country} />
+        ))
+      }
+    </ApolloConsumer>
+  );
 };
 
 export default LinkList;

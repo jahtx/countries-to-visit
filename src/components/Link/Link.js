@@ -1,11 +1,11 @@
 import React from "react";
 
 const Link = (props) => {
-  const { link } = props;
+  const country = props.country;
   return (
     <div>
       <div>
-        {link.name} ({link.weather})
+        {country.name} ({country.capital})
       </div>
     </div>
   );
