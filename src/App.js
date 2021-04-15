@@ -1,62 +1,16 @@
 import React from "react";
-
 import "./styles/main.scss";
 import globe from "./images/spinning-globe.gif";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import LinkList from "./components/LinkList/LinkList";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  ApolloProvider,
-  ApolloClient,
-  InMemoryCache,
-  gql,
-} from "@apollo/client";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 const client = new ApolloClient({
   uri: "https://graphql-weather-api.herokuapp.com/",
   cache: new InMemoryCache(),
 });
 
-client
-  .query({
-    query: gql`
-      {
-        getCityByName(name: "Boston") {
-          id
-          name
-          country
-          coord {
-            lon
-            lat
-          }
-          weather {
-            summary {
-              title
-              description
-              icon
-            }
-            temperature {
-              actual
-              feelsLike
-              min
-              max
-            }
-            wind {
-              speed
-              deg
-            }
-            clouds {
-              all
-              visibility
-              humidity
-            }
-            timestamp
-          }
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
 function App() {
   return (
     <ApolloProvider client={client}>
