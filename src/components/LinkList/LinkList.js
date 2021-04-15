@@ -1,26 +1,13 @@
 import React from "react";
-import Link from "../Link/Link";
+// import Link from "../Link/Link";
+// import { gql, useQuery } from "@apollo/client";
+import { ApolloConsumer } from "@apollo/client";
 
 const LinkList = () => {
-  const linksToRender = [
-    {
-      id: "1",
-      description: "Prisma gives you a powerful database toolkit 😎",
-      url: "https://prisma.io",
-    },
-    {
-      id: "2",
-      description: "The best GraphQL client",
-      url: "https://www.apollographql.com/docs/react/",
-    },
-  ];
-
   return (
-    <div>
-      {linksToRender.map((link) => (
-        <Link key={link.id} link={link} />
-      ))}
-    </div>
+    <ApolloConsumer>
+      {(client) => "We have access to the client!" /* do stuff here */}
+    </ApolloConsumer>
   );
 };
 

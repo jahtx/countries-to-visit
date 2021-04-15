@@ -1,11 +1,57 @@
 import React from "react";
+
 import "./styles/main.scss";
 import globe from "./images/spinning-globe.gif";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import LinkList from "./components/LinkList/LinkList";
+// import LinkList from "./components/LinkList/LinkList";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+const client = new ApolloClient({
+  uri: "https://graphql-weather-api.herokuapp.com/",
+  cache: new InMemoryCache(),
+});
 
+client
+  .query({
+    query: gql`
+      {
+        getCityByName(name: "Boston") {
+          id
+          name
+          country
+          coord {
+            lon
+            lat
+          }
+          weather {
+            summary {
+              title
+              description
+              icon
+            }
+            temperature {
+              actual
+              feelsLike
+              min
+              max
+            }
+            wind {
+              speed
+              deg
+            }
+            clouds {
+              all
+              visibility
+              humidity
+            }
+            timestamp
+          }
+        }
+      }
+    `,
+  })
+  .then((result) => console.log(result));
 function App() {
   return (
     <div className="App text-left">
@@ -17,9 +63,6 @@ function App() {
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
       </Navbar>
-      {/* <div className="container-sm mt-3">
-        "I'm going where the sun keeps shinin', Through the pouring rain"
-      </div> */}
 
       <div className="container-sm mt-3">
         <img
@@ -31,9 +74,7 @@ function App() {
       <div className="container-sm">
         <h4>Places where the weather suits your clothes:</h4>
       </div>
-      <div className="container-sm">
-        <LinkList />
-      </div>
+      <div className="container-sm">go</div>
     </div>
   );
 }
