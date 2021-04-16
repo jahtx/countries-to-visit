@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ApolloConsumer, gql, useQuery } from "@apollo/client";
 import Form from "react-bootstrap/Form";
+import { Card } from "react-bootstrap";
 const GET_COUNTRIES = gql`
   query GetCountries {
     countries {
@@ -31,12 +32,12 @@ const LinkList = () => {
         <div>
           <Form>
             <Form.Group>
-              <Form.Label>Country to Visit</Form.Label>
+              <Form.Label>Select</Form.Label>
               <Form.Control
                 id="country-selection"
                 onChange={handleNameInput}
                 as="select"
-                size="sm"
+                size="lg"
                 custom
               >
                 {data.countries.map((country) => (
@@ -49,10 +50,13 @@ const LinkList = () => {
           </Form>
           <div>
             {name ? (
-              <span>
-                You should visit the capital, which is &nbsp;"
-                {name}".{" "}
-              </span>
+              <Card bg="dark text-light">
+                <Card.Body>
+                  {" "}
+                  You should visit the capital, which is &nbsp;
+                  <strong>{name}</strong>.
+                </Card.Body>
+              </Card>
             ) : null}
           </div>
         </div>
