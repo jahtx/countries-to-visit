@@ -52,7 +52,6 @@ const LinkList = () => {
             {name ? (
               <Card bg="dark text-light">
                 <Card.Body>
-                  {" "}
                   You should visit the capital, which is &nbsp;
                   <strong>{name}</strong>.
                 </Card.Body>
