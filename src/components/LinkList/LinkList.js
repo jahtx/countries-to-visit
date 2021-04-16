@@ -1,7 +1,5 @@
 import * as React from "react";
-// import Link from "../Link/Link";
-import { gql, useQuery } from "@apollo/client";
-import { ApolloConsumer } from "@apollo/client";
+import { ApolloConsumer, gql, useQuery } from "@apollo/client";
 import Form from "react-bootstrap/Form";
 const GET_COUNTRIES = gql`
   query GetCountries {
@@ -14,7 +12,7 @@ const GET_COUNTRIES = gql`
 `;
 
 const LinkList = () => {
-  /** Function that will set different values to state variable
+  /** Function that will set different values to variable
    * based on which dropdown is selected
    */
   const changeSelectOptionHandler = (event) => {
