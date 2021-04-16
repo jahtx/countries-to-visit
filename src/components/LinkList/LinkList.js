@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { ApolloConsumer, gql, useQuery } from "@apollo/client";
 import Form from "react-bootstrap/Form";
 const GET_COUNTRIES = gql`
@@ -12,13 +12,11 @@ const GET_COUNTRIES = gql`
 `;
 
 const LinkList = () => {
-  /** Function that will set different values to variable
-   * based on which dropdown is selected
-   */
-  const changeSelectOptionHandler = (event) => {
-    document.getElementById("capitalText").innerHTML = document.getElementById(
-      "country-selection"
-    ).value;
+  // using hooks in a functional component
+  const [name, setName] = useState("");
+
+  const handleNameInput = (e) => {
+    setName(e.target.value);
   };
 
   const { loading, error, data } = useQuery(GET_COUNTRIES, {
@@ -36,7 +34,7 @@ const LinkList = () => {
               <Form.Label>Country to Visit</Form.Label>
               <Form.Control
                 id="country-selection"
-                onChange={changeSelectOptionHandler}
+                onChange={handleNameInput}
                 as="select"
                 size="sm"
                 custom
@@ -50,8 +48,12 @@ const LinkList = () => {
             </Form.Group>
           </Form>
           <div>
-            You should visit the capital, which is &nbsp;"
-            <span id="capitalText"></span>".
+            {name ? (
+              <span>
+                You should visit the capital, which is &nbsp;"
+                {name}".{" "}
+              </span>
+            ) : null}
           </div>
         </div>
       )}
