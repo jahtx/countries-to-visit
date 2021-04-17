@@ -5,7 +5,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import LinkList from "./components/LinkList/LinkList";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/react-hooks";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 const client = new ApolloClient({
   uri: "https://countries.trevorblades.com/",
   cache: new InMemoryCache(),
