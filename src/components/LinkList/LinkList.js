@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { ApolloConsumer, gql, useQuery } from "@apollo/client";
 import Form from "react-bootstrap/Form";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 import { Card } from "react-bootstrap";
+import "./linklist.scss";
 const GET_COUNTRIES = gql`
   query GetCountries {
     countries {
@@ -30,6 +33,17 @@ const LinkList = () => {
     <ApolloConsumer>
       {(client) => (
         <div>
+          <Jumbotron
+            fluid
+            className="jumbo"
+            style={{
+              backgroundImage: `url(${
+                process.env.PUBLIC_URL + "./images/mountains.jpg"
+              })`,
+            }}
+          >
+            <Container className="jumbo-container"></Container>
+          </Jumbotron>
           <Form>
             <Form.Group>
               <Form.Label>Select</Form.Label>
