@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/main.scss";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import LinkList from "./components/LinkList/LinkList";
+import MainBody from "./components/MainBody/MainBody";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
@@ -26,7 +26,7 @@ function App() {
         </Navbar>
 
         <div className="container-sm">
-          <LinkList />
+          <MainBody />
         </div>
       </div>
     </ApolloProvider>

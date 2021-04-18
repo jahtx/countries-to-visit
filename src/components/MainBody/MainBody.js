@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ApolloConsumer, gql, useQuery } from "@apollo/client";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
 import { Card } from "react-bootstrap";
-import "./linklist.scss";
+import "./mainbody.scss";
 const GET_COUNTRIES = gql`
   query GetCountries {
     countries {
@@ -17,38 +15,25 @@ const GET_COUNTRIES = gql`
   }
 `;
 
-const LinkList = () => {
+const MainBody = () => {
   // using hooks in a functional component
   const [name, setName] = useState("");
 
   const [background, setBackground] = useState("");
 
   const handleNameInput = (e) => {
-    setName(e.target.value);
-    const query = e.target.value;
+    const value = e.target.value;
+    setName(value);
     axios
       .get(
-        `https://api.unsplash.com/search/photos/?page=1&per_page=10&query=${query}&client_id=${"jAOelm8-YvrFW2mKMR2cuHT1HtF-XexMgcHFQ5nkzoo"}`
+        `https://api.unsplash.com/search/photos/?page=1&per_page=10&query=${value}&client_id=${"jAOelm8-YvrFW2mKMR2cuHT1HtF-XexMgcHFQ5nkzoo"}`
       )
       .then((data) => {
         data.data.results[0]
           ? setBackground(data.data.results[0].urls.regular)
-          : console.log("huh");
+          : console.log("no data");
       });
   };
-
-  const performSearch = (e) => {
-    console.log(e.target.value);
-    // axios
-    //   .get(
-    //     `https://api.unsplash.com/search/photos/?page=1&per_page=10&query=${query}&client_id=${"jAOelm8-YvrFW2mKMR2cuHT1HtF-XexMgcHFQ5nkzoo"}`
-    //   )
-    //   .then((data) => {
-    //     console.log(data.data.results[1]);
-    //   });
-  };
-
-  //performSearch();
 
   const { loading, error, data } = useQuery(GET_COUNTRIES, {
     variables: { limit: 5 },
@@ -67,9 +52,7 @@ const LinkList = () => {
             style={{
               backgroundImage: `url(${background})`,
             }}
-          >
-            <Container className="jumbo-container"></Container>
-          </Jumbotron>
+          ></Jumbotron>
           <Form>
             <Form.Group>
               <Form.Label>Select</Form.Label>
@@ -99,13 +82,10 @@ const LinkList = () => {
             ) : null}
           </div>
           <br />
-          <Button variant="primary" onClick={performSearch}>
-            Primary
-          </Button>{" "}
         </div>
       )}
     </ApolloConsumer>
   );
 };
 
-export default LinkList;
+export default MainBody;
