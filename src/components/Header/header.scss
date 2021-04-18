@@ -1,8 +1,33 @@
+@import "../../styles/breakpoints.scss";
+
 .topArea {
   width: 100%;
-  height: 300px;
+  height: 200px;
   background-image: url("../../images/clouds-good.png");
   background-size: contain;
-  background-position: center;
+  background-position: top;
   background-repeat: repeat-x;
+  @include MQ(S) {
+    height: 200px;
+  }
+  @include MQ(XL) {
+    height: 300px;
+  }
+}
+
+.mainHeader {
+  font-family: "Nothing You Could Do";
+}
+
+.topContainer {
+  text-align: center;
+  & h1 {
+    padding: 2em 0 0 0;
+    @include MQ(S) {
+      padding: 2.2em 0 0 0;
+    }
+    @include MQ(XL) {
+      padding: 3em 0 0 0;
+    }
+  }
 }

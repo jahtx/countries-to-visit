@@ -30,7 +30,7 @@ const MainBody = () => {
       )
       .then((data) => {
         data.data.results[0]
-          ? setBackground(data.data.results[0].urls.regular)
+          ? setBackground(data.data.results[3].urls.regular)
           : console.log("no data");
       });
   };
@@ -46,16 +46,9 @@ const MainBody = () => {
     <ApolloConsumer>
       {(client) => (
         <div>
-          <Jumbotron
-            fluid
-            className="jumbo"
-            style={{
-              backgroundImage: `url(${background})`,
-            }}
-          ></Jumbotron>
           <Form>
             <Form.Group>
-              <Form.Label>Select</Form.Label>
+              <Form.Label>Select a Country</Form.Label>
               <Form.Control
                 id="country-selection"
                 onChange={handleNameInput}
@@ -82,6 +75,13 @@ const MainBody = () => {
             ) : null}
           </div>
           <br />
+          <Jumbotron
+            fluid
+            className="jumbo"
+            style={{
+              backgroundImage: `url(${background})`,
+            }}
+          ></Jumbotron>
         </div>
       )}
     </ApolloConsumer>

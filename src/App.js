@@ -1,7 +1,5 @@
 import React from "react";
 import "./styles/main.scss";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import MainBody from "./components/MainBody/MainBody";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ApolloProvider } from "@apollo/react-hooks";
