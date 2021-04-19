@@ -23,6 +23,7 @@
   background-color: white !important;
   height: 25rem;
   width: 40rem;
+  text-align: center;
   @include MQ(S) {
     height: 30rem;
     width: 40rem;
@@ -31,9 +32,19 @@
     height: 30rem;
     width: 40rem;
   }
+  .inset {
+    font-family: "Nothing You Could Do";
+    font-size: 1.4em;
+    color: white;
+    text-shadow: 2px 2px black;
+    @include MQ(S) {
+      font-size: 3rem;
+    }
+  }
 }
 
 .postcard-pict-redone {
+  @include flex_center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,58 +63,18 @@
     width: 19rem;
   }
 }
-.postcard-back {
-  position: relative;
-  background-image: url("../../images/postcard.gif");
-  height: 200px;
-  background-position: top;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: white !important;
-  margin: 0 !important;
-  @include MQ(S) {
-    height: 300px;
-  }
-  @include MQ(M) {
-    height: 500px;
-  }
-}
-
-.postcard-pict {
+.justVisiting {
   position: absolute;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  left: 130px;
-  top: 30px;
-  width: 150px;
-  height: 140px;
-  @include MQ(S) {
-    left: 92px;
-    top: 30px;
-    width: 200px;
-    height: 240px;
-  }
+  font-family: "Nothing You Could Do";
+  font-size: 1.2em;
+  left: 26rem;
+  text-align: left;
+  width: 11rem;
+  top: 19rem;
+  visibility: hidden;
+  display: none;
   @include MQ(M) {
-    left: 70px;
-    top: 50px;
-    width: 300px;
-    height: 400px;
+    display: block;
+    visibility: visible;
   }
-  @include MQ(L) {
-    left: 180px;
-    top: 50px;
-    width: 300px;
-    height: 400px;
-  }
-  @include MQ(XL) {
-    left: 280px;
-    top: 50px;
-    width: 300px;
-    height: 400px;
-  }
-}
-
-.custom-select {
-  padding: 0 !important;
 }

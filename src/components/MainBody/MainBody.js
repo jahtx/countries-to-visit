@@ -62,43 +62,22 @@ const MainBody = () => {
               </Form.Control>
             </Form.Group>
           </Form>
-          {/* <div>
-            {name ? (
-              <Card bg="dark text-light">
-                <Card.Body>
-                  You should visit the capital, which is &nbsp;
-                  <strong>{name}</strong>.
-                </Card.Body>
-              </Card>
-            ) : null}
-          </div> */}
-          <br />
-          {/* <Jumbotron
-            fluid
-            className="jumbo"
-            style={{
-              backgroundImage: `url(${background})`,
-            }}
-          ></Jumbotron> */}
+
           <div className="postcard-container">
-            {" "}
             <div className="postcard-back-redone">
               <div
                 className="postcard-pict-redone"
                 style={{
                   backgroundImage: `url(${background})`,
                 }}
-              ></div>
-              {/* <div
-              className="postcard-pict"
-              style={{
-                backgroundImage: `url(${background})`,
-              }}
-            ></div> */}
+              >
+                <span className="inset">Wish you were here!</span>
+              </div>
+              <div className="justVisiting">
+                Just visiting the city of {name}, and thought I'd say hello!{" "}
+              </div>
             </div>
           </div>
-
-          {/* <div className="postcard-back"></div> */}
         </div>
       )}
     </ApolloConsumer>
