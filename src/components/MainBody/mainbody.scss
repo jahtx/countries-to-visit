@@ -1,4 +1,5 @@
 @import "../../styles/breakpoints.scss";
+@import "../../styles/variables.scss";
 
 .jumbo {
   background-image: url("../../images/mountains.jpg");
@@ -9,11 +10,53 @@
   padding: 20px 0;
 }
 
+.postcard-container {
+  @include flex_center;
+}
+.postcard-back-redone {
+  position: relative;
+  background-image: url("../../images/postcard.gif");
+
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white !important;
+  height: 25rem;
+  width: 40rem;
+  @include MQ(S) {
+    height: 30rem;
+    width: 40rem;
+  }
+  @include MQ(M) {
+    height: 30rem;
+    width: 40rem;
+  }
+}
+
+.postcard-pict-redone {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  left: 10%;
+  top: 10%;
+  position: absolute;
+  background-color: white;
+  height: 30%;
+  width: 40%;
+  @include MQ(S) {
+    height: 18rem;
+    width: 15rem;
+  }
+  @include MQ(M) {
+    height: 24rem;
+    width: 19rem;
+  }
+}
 .postcard-back {
   position: relative;
   background-image: url("../../images/postcard.gif");
   height: 200px;
-  background-position: center;
+  background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: white !important;

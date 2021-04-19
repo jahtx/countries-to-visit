@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ApolloConsumer, gql, useQuery } from "@apollo/client";
 import Form from "react-bootstrap/Form";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import { Card } from "react-bootstrap";
 import "./mainbody.scss";
 const GET_COUNTRIES = gql`
   query GetCountries {
@@ -64,7 +62,7 @@ const MainBody = () => {
               </Form.Control>
             </Form.Group>
           </Form>
-          <div>
+          {/* <div>
             {name ? (
               <Card bg="dark text-light">
                 <Card.Body>
@@ -73,7 +71,7 @@ const MainBody = () => {
                 </Card.Body>
               </Card>
             ) : null}
-          </div>
+          </div> */}
           <br />
           {/* <Jumbotron
             fluid
@@ -82,14 +80,23 @@ const MainBody = () => {
               backgroundImage: `url(${background})`,
             }}
           ></Jumbotron> */}
-          <Jumbotron fluid className="postcard-back">
-            <div
+          <div className="postcard-container">
+            {" "}
+            <div className="postcard-back-redone">
+              <div
+                className="postcard-pict-redone"
+                style={{
+                  backgroundImage: `url(${background})`,
+                }}
+              ></div>
+              {/* <div
               className="postcard-pict"
               style={{
                 backgroundImage: `url(${background})`,
               }}
-            ></div>
-          </Jumbotron>
+            ></div> */}
+            </div>
+          </div>
 
           {/* <div className="postcard-back"></div> */}
         </div>
