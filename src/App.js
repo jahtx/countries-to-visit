@@ -21,7 +21,7 @@ function App() {
         </div>
       </div>
       <div className="container-sm text-center">
-        Images made possible by{" "}
+        Country images made possible by
         <a id="unsplash-link" href="https://unsplash.com">
           Unsplash
         </a>
