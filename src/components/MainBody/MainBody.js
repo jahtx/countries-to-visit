@@ -75,13 +75,23 @@ const MainBody = () => {
             ) : null}
           </div>
           <br />
-          <Jumbotron
+          {/* <Jumbotron
             fluid
             className="jumbo"
             style={{
               backgroundImage: `url(${background})`,
             }}
-          ></Jumbotron>
+          ></Jumbotron> */}
+          <Jumbotron fluid className="postcard-back">
+            <div
+              className="postcard-pict"
+              style={{
+                backgroundImage: `url(${background})`,
+              }}
+            ></div>
+          </Jumbotron>
+
+          {/* <div className="postcard-back"></div> */}
         </div>
       )}
     </ApolloConsumer>

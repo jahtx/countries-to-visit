@@ -1,8 +1,66 @@
+@import "../../styles/breakpoints.scss";
+
 .jumbo {
   background-image: url("../../images/mountains.jpg");
   background-position: top;
-  height: 400px;
+  height: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 20px 0;
+}
+
+.postcard-back {
+  position: relative;
+  background-image: url("../../images/postcard.gif");
+  height: 200px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white !important;
+  margin: 0 !important;
+  @include MQ(S) {
+    height: 300px;
+  }
+  @include MQ(M) {
+    height: 500px;
+  }
+}
+
+.postcard-pict {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  left: 130px;
+  top: 30px;
+  width: 150px;
+  height: 140px;
+  @include MQ(S) {
+    left: 92px;
+    top: 30px;
+    width: 200px;
+    height: 240px;
+  }
+  @include MQ(M) {
+    left: 70px;
+    top: 50px;
+    width: 300px;
+    height: 400px;
+  }
+  @include MQ(L) {
+    left: 180px;
+    top: 50px;
+    width: 300px;
+    height: 400px;
+  }
+  @include MQ(XL) {
+    left: 280px;
+    top: 50px;
+    width: 300px;
+    height: 400px;
+  }
+}
+
+.custom-select {
+  padding: 0 !important;
 }
