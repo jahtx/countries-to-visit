@@ -71,11 +71,19 @@ const MainBody = () => {
                   backgroundImage: `url(${background})`,
                 }}
               >
-                <span className="inset">Wish you were here!</span>
+                {name ? (
+                  <span className="inset">Wish you were here!</span>
+                ) : (
+                  <span className="inset">Select a country</span>
+                )}
               </div>
-              <div className="justVisiting">
-                Just visiting the city of {name}, and thought I'd say hello!{" "}
-              </div>
+
+              {name ? (
+                <div className="justVisiting">
+                  Just visiting the city of {name} and thought I would say
+                  hello!
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

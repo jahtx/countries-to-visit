@@ -1,15 +1,6 @@
 @import "../../styles/breakpoints.scss";
 @import "../../styles/variables.scss";
 
-.jumbo {
-  background-image: url("../../images/mountains.jpg");
-  background-position: top;
-  height: 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 20px 0;
-}
-
 .postcard-container {
   @include flex_center;
 }
@@ -45,13 +36,14 @@
 
 .postcard-pict-redone {
   @include flex_center;
+  background-color: grey;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   left: 10%;
   top: 10%;
   position: absolute;
-  background-color: white;
+
   height: 30%;
   width: 40%;
   @include MQ(S) {
