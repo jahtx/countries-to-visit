@@ -22,12 +22,18 @@
 .topContainer {
   text-align: center;
   & h1 {
-    padding: 2em 0 0 0;
+    padding: 0.8em 0 0 0;
+    font-size: 2em;
     @include MQ(S) {
-      padding: 2.2em 0 0 0;
+      padding: 2em 0 0 0;
+      font-size: 2.5em;
     }
     @include MQ(XL) {
-      padding: 3em 0 0 0;
+      padding: 2.5em 0 0 0;
     }
   }
+}
+
+.smallPlane {
+  height: 40px;
 }

@@ -30,7 +30,7 @@ const MainBody = () => {
       )
       .then((data) => {
         data.data.results[0]
-          ? setBackground(data.data.results[3].urls.regular)
+          ? setBackground(data.data.results[0].urls.regular)
           : console.log("no data");
       });
   };

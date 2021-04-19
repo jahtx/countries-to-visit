@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 const client = new ApolloClient({
   uri: "https://countries.trevorblades.com/",
   cache: new InMemoryCache(),
@@ -19,6 +20,7 @@ function App() {
           <MainBody />
         </div>
       </div>
+      <Footer />
     </ApolloProvider>
   );
 }
