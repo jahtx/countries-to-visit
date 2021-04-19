@@ -8,10 +8,11 @@
   background-position: top;
   background-repeat: repeat-x;
   @include MQ(S) {
-    height: 200px;
+    min-height: 100px;
+    height: 20vh;
   }
   @include MQ(XL) {
-    height: 300px;
+    height: 20vh;
   }
 }
 
@@ -25,11 +26,11 @@
     padding: 0.8em 0 0 0;
     font-size: 2em;
     @include MQ(S) {
-      padding: 2em 0 0 0;
+      padding: 4vh 0 0 0;
       font-size: 2.5em;
     }
     @include MQ(XL) {
-      padding: 2.5em 0 0 0;
+      padding: 4vh 0 0 0;
     }
   }
 }
