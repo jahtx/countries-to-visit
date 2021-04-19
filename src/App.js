@@ -20,6 +20,13 @@ function App() {
           <MainBody />
         </div>
       </div>
+      <div className="container-sm text-center">
+        Images made possible by{" "}
+        <a id="unsplash-link" href="https://unsplash.com">
+          Unsplash
+        </a>
+        .
+      </div>
       <Footer />
     </ApolloProvider>
   );
