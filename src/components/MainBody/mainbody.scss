@@ -3,6 +3,7 @@
 
 .postcard-container {
   @include flex_center;
+  margin-bottom: 50px;
 }
 .postcard-back-redone {
   position: relative;
