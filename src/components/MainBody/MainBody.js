@@ -46,7 +46,9 @@ const MainBody = () => {
         <div>
           <Form>
             <Form.Group>
-              <Form.Label>Select a Country</Form.Label>
+              <Form.Label className="selectCountry">
+                Select a Country
+              </Form.Label>
               <Form.Control
                 id="country-selection"
                 onChange={handleNameInput}

@@ -33,6 +33,11 @@
   }
 }
 
+.selectCountry {
+  font-family: "Comfortaa", cursive;
+  font-size: 2em;
+  font-weight: bold;
+}
 .postcard-pict-redone {
   @include flex_center;
   background-color: grey;
