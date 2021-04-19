@@ -6,8 +6,7 @@
 }
 .postcard-back-redone {
   position: relative;
-  background-image: url("../../images/postcard.gif");
-
+  background-image: url("../../images/card-shadow.png");
   background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
@@ -16,11 +15,11 @@
   width: 40rem;
   text-align: center;
   @include MQ(S) {
-    height: 30rem;
+    height: 31rem;
     width: 40rem;
   }
   @include MQ(M) {
-    height: 30rem;
+    height: 31rem;
     width: 40rem;
   }
   .inset {
@@ -43,8 +42,7 @@
   left: 10%;
   top: 10%;
   position: absolute;
-
-  height: 30%;
+  height: 38%;
   width: 40%;
   @include MQ(S) {
     height: 18rem;
