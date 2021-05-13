@@ -7,7 +7,7 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 const client = new ApolloClient({
-  uri: "https://apollo-server-countries-vokuu.ondigitalocean.app/",
+  uri: "https://countries.trevorblades.com/",
   cache: new InMemoryCache(),
 });
 
