@@ -20,13 +20,13 @@ function App() {
           <MainBody />
         </div>
       </div>
-      <div className="container-sm text-center">
+      {/* <div className="container-sm text-center">
         Country images from&nbsp;
         <a id="unsplash-link" href="https://unsplash.com">
           Unsplash
         </a>
         .
-      </div>
+      </div> */}
       <Footer />
     </ApolloProvider>
   );
